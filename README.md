@@ -27,14 +27,16 @@ Qlip is an [Assembly](http://assembly.com) Project.
 * Or vice versa.
 
 ## Roadmap
-- [x] Register the project in Assembly
-- [ ] Create an MVP for Qlip website. (Sign-up, Settings, Downloads, Pricing)
-- [ ] Create an MVP for Qlip station. Station is a Node.js entity responsible for real-time communication between devices.
-- [ ] Create an MVP for Qlip linux agent. This is a compiled Node.js app which runs on linux systems and communicates with Station.  
-- [ ] Create an MVP for Qlip android agent. Communicates with station.   
-- [ ] Add support for transferring regular files using Qlip. I think it should have size limit.   
-- [ ] Add basic social functions. Ask whom to send right after something is being copied. It's interface should NOT bother the user.
-- [ ] Add support for transferring huge files.
+- [x] Register the project in Assembly.
+- [ ] Create an MVP for Qlip **Website**. (Sign-up, Settings, Downloads, Pricing)
+- [ ] Create an MVP for Qlip **Station**. Station is a Node.js entity responsible for real-time communication between devices.
+- [ ] Create an MVP for Qlip **linux agent**. This is a compiled Node.js app which runs on linux systems and communicates with Station.  
+- [ ] Create an MVP for Qlip **android agent**. Communicates with station.   
+- [ ] Add support for transferring regular **files** using Qlip. I think it should have size limit.   
+- [ ] Add basic **social** functions. Ask whom to send, right after something is being copied. It's interface should NOT bother the user.
+- [ ] Create **Windows** agent.
+- [ ] Create **iOS** agent.
+- [ ] Create **Mac** agent.
 
 ## License
 [Read about it here](LICENSE)
