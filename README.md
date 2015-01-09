@@ -11,7 +11,7 @@ it generously asks you whether if to paste it onto your friends' devices.
 Qlip is so tiny it wont even bother you. Some people use it everyday but have forgotten that it's there.
 Because it runs in the background.
 
-<a href="https://assembly.com/idealist/bounties">
+<a href="https://assembly.com/qlip/bounties">
 <img src="https://asm-badger.herokuapp.com/qlip/badges/tasks.svg" height="24px" alt="Open Tasks" />
 </a>   
 Qlip is an [Assembly](http://assembly.com) Project.
