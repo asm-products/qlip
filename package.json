@@ -7,7 +7,7 @@
     "main": "src/index.js",
     "repository": {
         "type": "git",
-        "url": "https://alipoor@bitbucket.org/vendora/qlip.git"
+        "url": "https://github.com/asm-products/qlip.git"
     },
     "scripts": {
         "start": "node ./src/bin/www",
