@@ -19,7 +19,7 @@ Qlip is an [Assembly](http://assembly.com) Project.
 ## How to install?
 * Sign up for Qlip.
 * Install Qlip (agents) on your devices and login.
-* Now Qlip is **ready** to work. Forever. Secure.
+* It's **ready** to work. Forever. Secure.
 
 ## How does it work?
 * Copy something on your phone.
