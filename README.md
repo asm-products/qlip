@@ -1,8 +1,7 @@
 # [Qlip](https://assembly.com/qlip)
 
-This is a **Work in Progress**.
+This is a **Work in Progress** and **not** ready for use.
 
-Clipboard re-invented with magic.   
 Qlip helps you move data like magic. If you want to copy a text from your phone to your PC.
 Or even a song from your phone to your iPod. You just copy from one device then paste it on another.
 
@@ -33,4 +32,9 @@ Qlip is an [Assembly](http://assembly.com) Project.
 - [ ] Create an MVP for Qlip station. Station is a Node.js entity responsible for real-time communication between devices.
 - [ ] Create an MVP for Qlip linux agent. This is a compiled Node.js app which runs on linux systems and communicates with Station.  
 - [ ] Create an MVP for Qlip android agent. Communicates with station.   
+- [ ] Add support for transferring regular files using Qlip. I think it should have size limit.   
 - [ ] Add basic social functions. Ask whom to send right after something is being copied. It's interface should NOT bother the user.
+- [ ] Add support for transferring huge files.
+
+## License
+[Read about it here](LICENSE)
