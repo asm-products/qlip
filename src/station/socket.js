@@ -10,7 +10,7 @@ function Socket() {
 Socket.prototype.setup = function () {
     var deferred = Q.defer();
 
-    this.socket = io.listen(config.station.port);
+    this.socket = io.listen(config.get('station_port'));
 
     this.socket.on('connect', function () {
         console.log('[Station] Socket client is connected.');
@@ -18,7 +18,7 @@ Socket.prototype.setup = function () {
 
     setTimeout(function () {
         deferred.resolve();
-        console.log('Station socket is listening on port: ' + config.station.port);
+        console.log('Station socket is listening on port: ' + config.get('station_port'));
     }, 1000);
 
     return deferred.promise;

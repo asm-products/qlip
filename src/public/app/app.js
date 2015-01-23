@@ -1,8 +1,8 @@
 angular.module('qlip', [
+    'ui.bootstrap',
     'ui.router',
     'restangular',
     'toaster',
-    'ui.bootstrap',
     'pascalprecht.translate',
     'monospaced.qrcode'
 ])

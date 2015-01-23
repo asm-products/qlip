@@ -6,7 +6,7 @@ angular.module('qlip')
     // Simply register translation table as object hash
     $translateProvider.translations('en', {
         'linux': 'Linux Computer',
-        'app.drivers.VENDORA_AGENT_LINUX_CONFIG_MODAL': 'Integrate Linux'
+        'app.drivers.AGENT_LINUX_CONFIG_MODAL': 'Integrate Linux'
     });
 
 }])

@@ -8,7 +8,7 @@ module.exports = function () {
 
     app.get('/config', function (req, res) {
         res.json({
-            GOOGLE_CLIENT_ID: config.thirdparty.google.GOOGLE_CLIENT_ID
+            // xxxxxx: config.get('xxxxxx')
         });
     });
 

@@ -2,6 +2,7 @@ var
     config         = require('./config'),
     express        = require('express'),
     passport       = require('passport'),
+    orm            = require('./orm'),
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 module.exports = function () {
@@ -11,9 +12,9 @@ module.exports = function () {
     app.use(passport.session());
 
     passport.use(new GoogleStrategy({
-            clientID: config.thirdparty.google.GOOGLE_CLIENT_ID,
-            clientSecret: config.thirdparty.google.GOOGLE_CLIENT_SECRET,
-            callbackURL: config.server.url + "/auth/google/callback"
+            clientID: config.get('google_client_id'),
+            clientSecret: config.get('google_client_secret'),
+            callbackURL: config.get('server_url') + "/auth/google/callback"
         },
         function(token, tokenSecret, profile, done) {
             var user = {
@@ -23,6 +24,20 @@ module.exports = function () {
                 fullname: profile.displayName,
                 email: profile.emails[0].value
             };
+
+            orm.User.find(profile.id)
+                .success(function (userRow) {
+                    userRow.id = user.id;
+                    userRow.avatar = user.avatar;
+                    userRow.provider = user.provider;
+                    userRow.fullname = user.fullname;
+                    userRow.email = user.email;
+                    userRow.save();
+                })
+                .fail(function () {
+                    orm.User.create(user);
+                })
+            ;
 
             done(null, user);
         }

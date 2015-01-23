@@ -2,7 +2,14 @@ var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
 var config    = require('../config');
-var sequelize = new Sequelize(config.database.name, config.database.username, config.database.password, config.database);
+var sequelize = new Sequelize(
+    config.get('database_name'),
+    config.get('database_username'),
+    config.get('database_password'),
+    {
+        dialect: config.get('database_dialect')
+    }
+);
 var db        = {};
 
 fs

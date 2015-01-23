@@ -17,7 +17,7 @@ module.exports = function() {
     app.get('/home', function(req, res) {
         res.render('home', {
             user: req.user,
-            title: config.title
+            title: config.get('app_title')
         });
     });
 

@@ -16,15 +16,15 @@ try {
 
     qlip
         .app()
-        .listen(config.server.port, config.server.host, function () {
+        .listen(config.get('server_port'), config.get('server_host'), function () {
             console.log(
                 'Qlip is running...'.green,
                 '\nYour site is now available on',
-                config.server.url,
+                config.get('server_url'),
                 '\nCtrl+C to shut down'.grey
             );
         });
 } catch (error) {
     console.log('Qlip could not run.'.red, error);
-    process.exit();
+    process.exit(1);
 }

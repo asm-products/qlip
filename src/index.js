@@ -36,7 +36,7 @@ Qlip.prototype.app = function () {
     app.use(session({
         resave: false,
         saveUninitialized: false,
-        secret: config.server.session_secret
+        secret: config.get('session_secret')
     }));
 
     // Routes
