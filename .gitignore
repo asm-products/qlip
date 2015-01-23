@@ -6,5 +6,5 @@ logs
 node_modules
 bower_components
 
-# Frontend config
-frontend/config.js
+# Settings
+settings.js

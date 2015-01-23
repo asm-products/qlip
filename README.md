@@ -16,10 +16,9 @@ Because it runs in the background.
 </a>   
 Qlip is an [Assembly](http://assembly.com) Project.
 
-## How to install?
-* Sign up for Qlip.
-* Install Qlip (agents) on your devices and login.
-* It's **ready** to work. Forever. Secure.
+## Getting Started
+* You need to have `node` and `npm` installed before you can proceed. 
+*  
 
 ## How does it work?
 * Copy something on your phone.
@@ -28,7 +27,7 @@ Qlip is an [Assembly](http://assembly.com) Project.
 
 ## Roadmap
 - [x] Register the project in Assembly.
-- [ ] Create an MVP for Qlip **Website**. (Sign-up, Settings, Downloads, Pricing)
+- [x] Create an MVP for Qlip **Website**. (Sign-up with Google, Dashboard)
 - [ ] Create an MVP for Qlip **Station**. Station is a Node.js entity responsible for real-time communication between devices.
 - [ ] Create an MVP for Qlip **linux agent**. This is a compiled Node.js app which runs on linux systems and communicates with Station.  
 - [ ] Create an MVP for Qlip **android agent**. Communicates with station.   
