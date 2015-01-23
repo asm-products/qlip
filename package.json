@@ -10,8 +10,9 @@
         "url": "https://github.com/asm-products/qlip.git"
     },
     "scripts": {
+        "prestart": "npm install",
         "start": "node ./index.js",
-        "test": "node node_modules/.bin/mocha"
+        "postinstall": "node node_modules/bower/bin/bower install"
     },
     "engines": {
         "node": "0.10.x"
@@ -24,12 +25,10 @@
         "express": "^4.10.2",
         "express-session": "^1.10.1",
         "glob": "^4.2.1",
-        "knex": "^0.7.3",
         "lodash": "^2.4.1",
         "mysql": "^2.5.3",
         "passport": "^0.2.1",
         "passport-google-oauth": "^0.1.5",
-        "pg": "^4.0.0",
         "q": "^1.1.1",
         "request": "^2.51.0",
         "sequelize": "^2.0.0-rc2",
