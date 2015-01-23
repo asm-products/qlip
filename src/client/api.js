@@ -1,4 +1,6 @@
-var orm        = require('../orm'),
+var
+    //_          = require('lodash'),
+    orm        = require('../orm'),
     products   = require('../products'),
     config     = require('../config');
 
@@ -13,6 +15,7 @@ module.exports = function () {
     });
 
     app.get('/products', function (req, res) {
+        //var products = _.map(products.getAll(), function(o) { return _.omit(o, ['publicPath']); });
         res.json(products.getAll());
     });
 

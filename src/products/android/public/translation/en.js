@@ -5,7 +5,7 @@ angular.module('qlip')
 
     // Simply register translation table as object hash
     $translateProvider.translations('en', {
-        'android': 'Android Device',
+        'app.product.android': 'Android Device',
         'app.drivers.AGENT_ANDROID_CONFIG_MODAL': 'Integrate Android Device'
     });
 

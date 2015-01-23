@@ -9,8 +9,6 @@ var
     config       = require('./config');
 
 function Qlip(settings) {
-    var me = this;
-
     if (typeof settings !== 'undefined') {
         this.config(settings);
     }

@@ -38,6 +38,8 @@ Station.prototype.setup = function () {
                 channel.station = me;
 
                 me.registerChannel(channel);
+            } else {
+                console.error('Cannot find channel for', product);
             }
         });
     });

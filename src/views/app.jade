@@ -43,7 +43,7 @@ block body
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand.topnav(href='#') Qlip
+                a#logo.navbar-brand.topnav(href='#') Qlip
             // Collect the nav links, forms, and other content for toggling
             #qlip-navbar-collapse.collapse.navbar-collapse
                 ul.nav.navbar-nav.navbar-right
@@ -53,7 +53,8 @@ block body
                         a(href='/logout') Logout
             // /.navbar-collapse
         // /.container
+        div.butterbar.active
+            div.bar
     div.container
-        div(id="qlip")
-            toaster-container(toaster-options="{'position-class': 'toast-top-right'}")
-            div(ui-view)
+        toaster-container(toaster-options="{'position-class': 'toast-top-right'}")
+        div#qlip(ui-view)

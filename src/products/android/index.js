@@ -1,4 +1,5 @@
 var util    = require('util'),
+    channel = require('./channel'),
     Product = require('../base');
 
 function AndroidProduct() {
@@ -15,5 +16,9 @@ function AndroidProduct() {
 }
 
 util.inherits(AndroidProduct, Product);
+
+AndroidProduct.prototype.getChannel = function () {
+    return channel;
+};
 
 module.exports = AndroidProduct;

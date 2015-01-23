@@ -9,6 +9,9 @@ angular.element(document).ready(function () {
             Products: ['$http', function ($http) {
                 return $http.get(window.location.pathname + 'api/products');
             }]
+        },
+        onError: function (error) {
+            alert('Could not bootstrap, error: ' + error);
         }
     });
 });

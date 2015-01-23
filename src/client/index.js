@@ -17,12 +17,6 @@ module.exports = function () {
             app.use('/products/' + product.getName() + '/public', express.static(path));
         }
 
-        var middleware = product.getMiddleware();
-
-        if (middleware) {
-            app.use('/products/' + product.getName(), middleware());
-        }
-
         if (product.scripts) {
             productScripts = productScripts.concat(product.scripts);
         }
@@ -39,10 +33,3 @@ module.exports = function () {
 
     return app;
 };
-
-function isAuthenticated(req, res, next) {
-    if (req.user && req.user.id)
-        return next();
-
-    res.redirect('/home');
-}

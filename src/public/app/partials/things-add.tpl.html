@@ -11,12 +11,12 @@
 
 <hr />
 
-<div class="row">
+<!--div class="row">
     <form action="#" class="clearfix gutter-bottom col-md-12">
         <input type="text" class="form-control input-lg col-md-12" placeholder="Search" ng-model="searchText" />
     </form>
     <hr ui-butterbar="busy" />
-</div>
+</div-->
 
 <div class="row">
     <div id="product-{{ product.id }}" class="product col-md-6"
@@ -25,7 +25,7 @@
             <span class="col-xs-3">
                 <img ng-src="{{ 'products/' + product.name + '/public/logo.jpg' }}" class="image img-thumbnail" />
             </span>
-            <h3 class="col-xs-9" translate="{{ product.name }}"></h3>
+            <h3 class="col-xs-9">Add <span translate="{{ 'app.product.' + product.name }}"></span></h3>
         </a>
     </div>
 </div>
