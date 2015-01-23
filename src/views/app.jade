@@ -1,0 +1,59 @@
+extends layout
+
+block head
+    // AngularJS & Modules
+    script(src="/underscore/underscore.js")
+    script(src="/angular/angular.js")
+    script(src="/angular-animate/angular-animate.js")
+    script(src="/angular-ui/build/angular-ui.js")
+    script(src="/angular-bootstrap/ui-bootstrap.js")
+    script(src="/angular-bootstrap/ui-bootstrap-tpls.js")
+    script(src="/angular-ui-router/release/angular-ui-router.js")
+    script(src="/restangular/dist/restangular.js")
+    script(src="/angular-translate/angular-translate.js")
+
+    script(src="http://monospaced.github.io/bower-qrcode-generator/js/qrcode.js")
+    script(src="/angular-qrcode/qrcode.js")
+
+    script(src="/AngularJS-Toaster/toaster.js")
+    script(src="/AngularJS-Toaster/toaster.js")
+    link(rel="stylesheet", href="/AngularJS-Toaster/toaster.css")
+
+    script(src="angular-deferred-bootstrap/angular-deferred-bootstrap.js")
+
+    // App files
+    link(rel="stylesheet", href="/app/styles.css")
+    script(src="/app/init.js")
+    script(src="/app/app.js")
+    script(src="/app/directives.js")
+    script(src="/app/drivers.js")
+    script(src="/app/things.js")
+
+    // Additional scripts like Products' scripts
+    for script in scripts
+        script(src=script)
+
+block body
+    nav.navbar.navbar-default.topnav(role='navigation')
+        .container.topnav
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#qlip-navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand.topnav(href='#') Qlip
+            // Collect the nav links, forms, and other content for toggling
+            #qlip-navbar-collapse.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='#user')= user.fullname
+                    li
+                        a(href='/logout') Logout
+            // /.navbar-collapse
+        // /.container
+    div.container
+        div(id="qlip")
+            toaster-container(toaster-options="{'position-class': 'toast-top-right'}")
+            div(ui-view)

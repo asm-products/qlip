@@ -1,0 +1,18 @@
+<div class="form-group">
+    <label>Download</label>
+    <div class="well">
+        <ul class="list-unstyled">
+            <li><a target="_blank" href="products/linux/public/qlip-agent-debian.deb">Download for Ubuntu/Debian</a></li>
+            <li><a target="_blank" href="products/linux/public/qlip-agent-centos.bin">Download for CentOS</a></li>
+        </ul>
+    </div>
+</div>
+<div class="form-group">
+    <label>Access Token</label>
+    <div class="input-group">
+        <input type="text" class="form-control" readonly required="required" placeholder="Token" ng-model="$parent.thing.config.token" />
+        <span class="input-group-btn">
+            <button class="btn btn-search" ng-click="getNewToken()">Re-generate Token</button>
+        </span>
+    </div>
+</div>

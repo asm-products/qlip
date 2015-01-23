@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-9">
+        <div class="form-group">
+            <label>Download</label>
+            <div class="well">
+                <ul class="list-unstyled">
+                    <li><a target="_blank" href="products/android/public/qlip-agent-android.apk">Download Android Agent</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Access Token</label>
+            <div class="input-group">
+                <input type="text" class="form-control" readonly required="required" placeholder="Token" ng-model="$parent.thing.config.token" />
+                <span class="input-group-btn">
+                    <button class="btn btn-search" ng-click="getNewToken()">Re-generate Token</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <qrcode data="{{ $parent.thing.config.token }}" size="200"></qrcode>
+    </div>
+</div>

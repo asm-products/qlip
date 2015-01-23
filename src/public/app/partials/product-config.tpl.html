@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h3 translate="{{ title }}"></h3>
+</div>
+<hr ui-butterbar="busy" />
+<div class="modal-body">
+    <form role="form">
+        <div class="form-group">
+            <label>Nickname</label>
+            <input type="text" class="form-control" ng-model="thing.nickname" />
+        </div>
+        <ng-include src="form" />
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn" ng-click="$dismiss()">Cancel</button>
+    <button class="btn btn-primary" ng-click="save()">Save</button>
+</div>

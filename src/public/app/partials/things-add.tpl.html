@@ -1,0 +1,31 @@
+<div class="h1">
+    Add a new device
+    <div class="btn-toolbar pull-right">
+        <div class="btn-group btn-group-lg">
+            <a ui-sref="things.list" class="btn btn-default">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <form action="#" class="clearfix gutter-bottom col-md-12">
+        <input type="text" class="form-control input-lg col-md-12" placeholder="Search" ng-model="searchText" />
+    </form>
+    <hr ui-butterbar="busy" />
+</div>
+
+<div class="row">
+    <div id="product-{{ product.id }}" class="product col-md-6"
+         ng-repeat="product in products | filter: searchText">
+        <a href="javascript:void(0);" class="row" ng-click="addThing(product)">
+            <span class="col-xs-3">
+                <img ng-src="{{ 'products/' + product.name + '/public/logo.jpg' }}" class="image img-thumbnail" />
+            </span>
+            <h3 class="col-xs-9" translate="{{ product.name }}"></h3>
+        </a>
+    </div>
+</div>

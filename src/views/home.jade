@@ -1,0 +1,114 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="assets/home.css")
+
+block body
+    nav.navbar.navbar-default.navbar-fixed-top.topnav(role='navigation')
+        .container.topnav
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#qlip-navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand.topnav(href='#') Qlip
+            // Collect the nav links, forms, and other content for toggling
+            #qlip-navbar-collapse.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='#features') Features
+                    li
+                        a(href='/auth/google') Sign-up with Google
+            // /.navbar-collapse
+        // /.container
+    // Header
+    a(name='about')
+    .intro-header
+        .container
+            .row
+                .col-lg-12
+                    .intro-message
+                        h1 Clipboard Reinvented
+                        h3 Magically sync your clipboards
+                        hr.intro-divider
+                        ul.list-inline.intro-social-buttons
+                            li
+                                a.btn.btn-default.btn-lg(href='/auth/google')
+                                    i.fa.fa-linkedin.fa-fw
+                                    span.network-name Login with Google
+        // /.container
+    // /.intro-header
+    // Page Content
+    a(name='features')
+    .content-section-a
+        .container
+            .row
+                .col-lg-5.col-sm-6
+                    hr.section-heading-spacer
+                    .clearfix
+                    h2.section-heading
+                        | Simple copy and paste:
+                        br
+                        | Over all of your devices.
+                    p.lead
+                        | We you copy something (e.g a text, a file, a song) Qlip will securly broadcast
+                        | it on all your devices in a blink. You don't need to do anything. It all happens magically.
+
+                .col-lg-5.col-lg-offset-2.col-sm-6
+                    img.img-responsive(src='img/ipad.png', alt='')
+        // /.container
+    // /.content-section-a
+    .content-section-b
+        .container
+            .row
+                .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+                    hr.section-heading-spacer
+                    .clearfix
+                    h2.section-heading
+                        | Secured transfers:
+                        br
+                        | All your data is encrypted
+                    p.lead
+                        | For security, Qlip will encrypt your data before broadcasting
+                        | so no one (including Qlip staff) can not see your data.
+                .col-lg-5.col-sm-pull-6.col-sm-6
+                    img.img-responsive(src='img/dog.png', alt='')
+        // /.container
+    // /.content-section-b
+    a(name='contact')
+    .banner
+        .container
+            .row
+                .col-lg-8
+                    h2 Securly sync your clipboards now:
+                .col-lg-4
+                    ul.list-inline.banner-social-buttons
+                        li
+                            a.btn.btn-default.btn-lg(href='/auth/google')
+                                i.fa.fa-linkedin.fa-fw
+                                span.network-name Login with Google
+        // /.container
+    // /.banner
+    // Footer
+    footer
+        .container
+            .row
+                .col-lg-12
+                    ul.list-inline
+                        li
+                            a(href='/') Home
+                        li.footer-menu-divider ⋅
+                        li
+                            a(href='/features') Features
+                        li.footer-menu-divider ⋅
+                        li
+                            a(href='/pricing') Pricing
+                        li.footer-menu-divider ⋅
+                        li
+                            a(href='/support') Support
+                        li.footer-menu-divider ⋅
+                        li
+                            a(href='/login') Login
+                    p.copyright.text-muted.small Copyright © Qlip 2014. All Rights Reserved

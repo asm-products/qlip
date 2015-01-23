@@ -1,0 +1,29 @@
+{
+  "name": "qlip",
+  "version": "0.0.1",
+  "authors": [
+    "Aram Alipoor <aram.alipoor@gmail.com>",
+    "Assembly Community (https://github.com/asm-products/qlip/contributors)"
+  ],
+  "description": "Qlip re-invented clipboard with magic.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.3.3",
+    "bootstrap": "~3.3.1",
+    "angular-ui-router": "~0.2.13",
+    "restangular": "~1.4.0",
+    "AngularJS-Toaster": "~0.4.8",
+    "underscore": "~1.7.0",
+    "angular-ui": "~0.4.0",
+    "angular-ui-bootstrap": "~0.12.0",
+    "angular-bootstrap": "~0.12.0",
+    "angular-deferred-bootstrap": "~0.1.5",
+    "angular-translate": "~2.4.2",
+    "angular-qrcode": "~5.1.0",
+    "jquery": "~2.1.3"
+  },
+  "resolutions": {
+    "angular": "~1.3.3"
+  }
+}
