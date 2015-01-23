@@ -37,7 +37,15 @@ h6 {
     margin: 0;
     height: 50px;
 }
-
+.modal-open > .container,
+.modal-open > .navbar
+{
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);
+    -o-filter: blur(3px);
+    filter: blur(3px);
+}
 .lead {
     font-size: 18px;
     font-weight: 400;
