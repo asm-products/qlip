@@ -17,13 +17,45 @@ Because it runs in the background.
 Qlip is an [Assembly](http://assembly.com) Project.
 
 ## Getting Started
-* You need to have `node` and `npm` installed before you can proceed. 
-*  
+If you want to setup a standalone Qlip server read below instructions.
+
+* You need to have `node` and `npm` installed before you can proceed.
+* Browse to the directory you to setup Qlip into. e.g. Your home `cd ~/`
+* Clone this repository. `git clone git@github.com:asm-products/qlip.git`
+* Create a database named `qlip_dev` in your MySql (e.g. using *phpMyAdmin*)
+* Create a copy of `settings.example.js` and name it `settings.js`, in the same directory.
+* Edit `settings.js` content, (under `development` block if you're testing locally):
+  * Add your MySql username and password into `settings.js`
+  
+      ```js
+      {
+        // ...
+        "database_username": "Username",
+        "database_password": "Password",
+        // ...
+      }
+      ```
+      
+  * Create your own Google Client ID under [Google Developers Console](https://console.developers.google.com) and put your credentionals like below. Don't forget to add `http://localhost:8080/auth/google/callback` into allowed callbacks in google's console.
+  
+      ```js
+      {
+        // ...
+        "google_client_id": "xxxxxxx",
+        "google_client_secret": "xxxxxx",
+        // ...
+      }
+      ```
+      
+* Run **`npm start`**.
+  * This command will automatically run `npm install` and `bower install`. But if you ran into problems you can run these 2 commands manually before trying `npm start`.
+
 
 ## How does it work?
-* Copy something on your phone.
-* Paste it on your PC.
-* Or vice versa.
+1. Go to Qlip dashboard, add your devices.
+2. Copy something on your phone.
+3. Paste it on your PC.
+4. Or vice versa.
 
 ## Roadmap
 - [x] Register the project in Assembly.
