@@ -70,4 +70,4 @@ If you want to setup a standalone Qlip server read below instructions.
 - [ ] Create **Mac** agent.
 
 ## License
-[Read about it here](LICENSE)
+AGPLv3 [Read about it here.](LICENSE)
