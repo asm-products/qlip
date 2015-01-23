@@ -16,7 +16,7 @@ settings = {
 
         "server_url": 'http://qlip.io',
         "server_host": '127.0.0.1',
-        "server_port": 2368,
+        "server_port": 80,
         "session_secret": 'SECRET SESSION',
 
         "google_client_id": 'xxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com',
@@ -35,9 +35,9 @@ settings = {
 
         "station_port": 4119,
 
-        "server_url": 'http://localhost:2368',
+        "server_url": 'http://localhost:8080',
         "server_host": '127.0.0.1',
-        "server_port": 2368,
+        "server_port": 8080,
         "session_secret": 'SECRET SESSION',
 
         "google_client_id": 'xxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com',
