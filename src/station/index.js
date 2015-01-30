@@ -13,13 +13,15 @@ function Station() {
 }
 
 Station.prototype.emit = function (event, thing, data) {
-    var clients = this.io.of('/').adapter.rooms[thing.user];
+    if (thing && thing.user) {
+        var clients = this.io.of('/').adapter.rooms[thing.user];
 
-    for (var id in clients) {
-        if (clients.hasOwnProperty(id)) {
-            var socket = this.io.sockets.adapter.nsp.connected[id];
-            if (socket.user === thing.user) {
-                socket.emit(event, data);
+        for (var id in clients) {
+            if (clients.hasOwnProperty(id)) {
+                var socket = this.io.sockets.adapter.nsp.connected[id];
+                if (socket.user === thing.user) {
+                    socket.emit(event, data);
+                }
             }
         }
     }
@@ -50,7 +52,7 @@ Station.prototype.setup = function () {
 
             orm.Thing.find({ where: { access_token: access_token } }).then(function (thing) {
 
-                if (!thing) {
+                if (!thing || !thing.user) {
                     throw new Error('[Station] Thing not found ' + access_token + '.');
                 }
 
@@ -73,7 +75,9 @@ Station.prototype.setup = function () {
 
     me.io.on('connection', function (socket) {
         socket.on('clipboard', function (content) {
-            me.emit('clipboard', socket.handshake.thing, content);
+            if (socket.handshake.thing) {
+                me.emit('clipboard', socket.handshake.thing, content);
+            }
         });
     });
 };
