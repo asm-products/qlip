@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         nickname: DataTypes.STRING(255),
         user: DataTypes.STRING(255),
         product: DataTypes.STRING(255),
-        config: DataTypes.TEXT
+        access_token: DataTypes.STRING(128)
     });
 
     return Thing;

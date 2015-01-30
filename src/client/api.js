@@ -14,6 +14,10 @@ module.exports = function () {
         });
     });
 
+    app.get('/user', function (req, res) {
+        res.json(req.user);
+    });
+
     app.get('/products', function (req, res) {
         //var products = _.map(products.getAll(), function(o) { return _.omit(o, ['publicPath']); });
         res.json(products.getAll());
@@ -37,7 +41,7 @@ module.exports = function () {
             user: req.user.id,
             nickname: req.param('nickname'),
             product: req.param('product'),
-            config: JSON.stringify(req.param('config'))
+            access_token: req.param('access_token')
         }).then(function (thing) {
             res.json(thing);
         }, function (reason) {
@@ -50,7 +54,7 @@ module.exports = function () {
         orm.Thing.update(
             {
                 nickname: req.param('nickname'),
-                config: JSON.stringify(req.param('config'))
+                access_token: req.param('access_token')
             },
             {
                 where: {

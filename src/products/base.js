@@ -16,10 +16,6 @@ Product.prototype.getAssets = function () {
     return this.assets;
 };
 
-Product.prototype.getChannel = function () {
-    return null;
-};
-
 Product.prototype.getPublicPath = function () {
     return this.publicPath;
 };

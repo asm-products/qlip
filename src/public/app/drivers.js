@@ -102,10 +102,6 @@ angular.module('qlip')
 
             changeConfig: function (thing) {
 
-                if (typeof thing.config === 'string') {
-                    thing.config = JSON.parse(thing.config);
-                }
-
                 return service.modalConfig(service.findDriver(thing), {
                     thing: function () { return thing; },
                     product: function () { return thing.product; }

@@ -12,18 +12,16 @@ angular.module('qlip')
         });
     })
 
-    .controller('AgentAndroidDriverConfigCtrl',  function ($q, $rootScope, $scope, $modalInstance, AgentLinuxDriver, thing, product) {
+    .controller('AgentAndroidDriverConfigCtrl',  function ($q, $rootScope, $scope, $modalInstance, User, AgentLinuxDriver, thing, product) {
 
         if (!thing) {
             thing = {
                 nickname: 'My ' + product.name,
-                config: {
-                    token: null
-                }
+                access_token: null
             };
 
-            generateToken().then(function (token) {
-                thing.config.token = token;
+            generateAccessToken().then(function (token) {
+                thing.access_token = token;
             });
         }
 
@@ -35,14 +33,14 @@ angular.module('qlip')
             $modalInstance.close(thing);
         };
 
-        $scope.getNewToken = function () {
-            generateToken().then(function (token) {
-                thing.config.token = token;
+        $scope.getNewAccessToken = function () {
+            generateAccessToken().then(function (token) {
+                thing.access_token = token;
             });
         };
 
-        function generateToken() {
-            return $q.when(Math.random().toString(36).substr(2) + Math.random().toString(36).substr(2));
+        function generateAccessToken() {
+            return $q.when(User.id + ':' + Math.random().toString(36).substr(2) + Math.random().toString(36).substr(2));
         }
     })
 

@@ -4,57 +4,78 @@
  * @package qlip
  */
 
-var socket   = require('./socket'),
+var config   = require('../config'),
     products = require('../products'),
     orm      = require('../orm');
 
 function Station() {
-    this.channels = [];
+
 }
 
-Station.prototype.socket = function () {
-    return socket;
+Station.prototype.emit = function (event, thing, data) {
+    var clients = this.io.of('/').adapter.rooms[thing.user];
+
+    for (var id in clients) {
+        if (clients.hasOwnProperty(id)) {
+            var socket = this.io.sockets.adapter.nsp.connected[id];
+            if (socket.user === thing.user) {
+                socket.emit(event, data);
+            }
+        }
+    }
 };
 
-Station.prototype.emit = function (thing, event, data) {
-    console.log('Station.prototype.emit', thing, event, data);
+Station.prototype.start = function () {
+    var me = this;
+
+    me.io = require('socket.io').listen(config.get('station_port'));
+
+    me.io.on('connect', function () {
+        console.log('[Station] Socket client is connected.');
+    });
+
+    setTimeout(function () {
+        console.log('[Station] Listening on port:' + config.get('station_port'));
+        me.setup();
+    }, 1000);
 };
 
 Station.prototype.setup = function () {
     var me = this,
-        channel;
+        namespace = me.io.of('/');
 
-    console.log('Setting up socket server...');
+    namespace.use(function(socket, next) {
+        if (socket.handshake.query.access_token) {
+            var access_token = socket.handshake.query.access_token;
 
-    socket.setup().then(function () {
+            orm.Thing.find({ where: { access_token: access_token } }).then(function (thing) {
 
-        console.log('Registering products...');
-        products.each(function (product) {
-            channel = product.getChannel();
+                if (!thing) {
+                    throw new Error('[Station] Thing not found ' + access_token + '.');
+                }
 
-            if (channel) {
-                channel.product = product;
-                channel.orm = orm;
-                channel.station = me;
+                socket.handshake.thing = thing;
+                socket.join(thing.user);
+                socket.emit('room', thing.user);
+                socket.user = thing.user;
 
-                me.registerChannel(channel);
-            } else {
-                console.error('Cannot find channel for', product);
-            }
-        });
+            }, function (reason) {
+                throw reason;
+            })
+            ;
+
+            next();
+
+        } else {
+            next(new Error('[Station] Not authorized request.'));
+        }
     });
 
-};
-
-// Register a channel into channels collection
-Station.prototype.registerChannel = function (channel) {
-    try {
-        channel.run();
-        this.channels.push(channel);
-        console.log('[Station] Channel "' + channel.product.getName() + '" registered.');
-    } catch (e) {
-        console.log('[Station] Channel "' + channel.product.getName() + '" error.', e);
-    }
+    me.io.on('connection', function (socket) {
+        socket.on('clipboard', function (content) {
+            me.emit('clipboard', socket.handshake.thing, content);
+        });
+    });
 };
 
 module.exports = new Station();

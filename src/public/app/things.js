@@ -71,7 +71,7 @@ angular.module('qlip')
                     things.post({
                         nickname: thing.nickname,
                         product: product.name,
-                        config: thing.config
+                        access_token: thing.access_token
                     }).then(
 
                         // Successfully saved
@@ -121,7 +121,7 @@ angular.module('qlip')
 
                     thing.patch({
                         nickname: newThingSettings.nickname,
-                        config: newThingSettings.config
+                        access_token: newThingSettings.access_token
                     }).then(
                         // Successfully saved
                         function () {

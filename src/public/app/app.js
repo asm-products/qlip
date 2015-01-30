@@ -1,4 +1,5 @@
 angular.module('qlip', [
+    'ngRoute',
     'ui.bootstrap',
     'ui.router',
     'restangular',
@@ -18,4 +19,7 @@ angular.module('qlip', [
         $locationProvider.html5Mode(false);
     })
 
+    .run(['$route', function($route)  {
+        $route.reload();
+    }]);
 ;

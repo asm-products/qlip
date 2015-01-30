@@ -1,5 +1,4 @@
 var util    = require("util"),
-    channel = require('./channel'),
     Product = require('../base');
 
 function LinuxProduct() {
@@ -17,8 +16,5 @@ function LinuxProduct() {
 
 util.inherits(LinuxProduct, Product);
 
-LinuxProduct.prototype.getChannel = function () {
-    return channel;
-};
 
 module.exports = LinuxProduct;

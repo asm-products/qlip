@@ -15,7 +15,8 @@ try {
     var qlip = new Qlip(config);
 
     qlip
-        .app()
+        // Start web application
+        .getApp()
         .listen(config.get('server_port'), config.get('server_host'), function () {
             console.log(
                 'Qlip is running...'.green,
@@ -23,7 +24,10 @@ try {
                 config.get('server_url'),
                 '\nCtrl+C to shut down'.grey
             );
-        });
+
+        })
+    ;
+
 } catch (error) {
     console.log('Qlip could not run.'.red, error);
     process.exit(1);

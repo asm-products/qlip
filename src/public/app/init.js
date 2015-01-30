@@ -8,10 +8,20 @@ angular.element(document).ready(function () {
             }],
             Products: ['$http', function ($http) {
                 return $http.get(window.location.pathname + 'api/products');
+            }],
+            User: ['$http', function ($http) {
+                return $http.get(window.location.pathname + 'api/user');
             }]
         },
         onError: function (error) {
             alert('Could not bootstrap, error: ' + error);
+        }
+    }).then(function () {
+        // TODO Sometimes our app will not bootstrap when user is coming back from Google OAuth,
+        // TODO we should fix this work around in future.
+        if (window.location.hash == '') {
+            window.location.hash = '#/things/list';
+            window.location.reload();
         }
     });
 });

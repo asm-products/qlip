@@ -11,14 +11,14 @@
         <div class="form-group">
             <label>Access Token</label>
             <div class="input-group">
-                <input type="text" class="form-control" readonly required="required" placeholder="Token" ng-model="$parent.thing.config.token" />
+                <input type="text" class="form-control" readonly required="required" placeholder="Token" ng-model="$parent.thing.access_token" />
                 <span class="input-group-btn">
-                    <button class="btn btn-search" ng-click="getNewToken()">Re-generate Token</button>
+                    <button class="btn btn-search" ng-click="getNewAccessToken()">Re-generate Token</button>
                 </span>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
-        <qrcode data="{{ $parent.thing.config.token }}" size="200"></qrcode>
+        <qrcode data="{{ $parent.thing.access_token }}" size="200"></qrcode>
     </div>
 </div>

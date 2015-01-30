@@ -13,7 +13,7 @@ function Qlip(settings) {
         this.config(settings);
     }
 
-    station.setup();
+    station.start();
 }
 
 // Get or set config settings
@@ -25,7 +25,8 @@ Qlip.prototype.config = function (settings) {
     return config;
 };
 
-Qlip.prototype.app = function () {
+// Get web app express instance
+Qlip.prototype.getApp = function () {
     var app = express();
 
     app.use(cookieParser());
